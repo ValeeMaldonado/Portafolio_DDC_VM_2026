@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EBDFCE;
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+}
+
+
+/* ==============================
+   BARRA DE NAVEGACIÓN
+============================== */
+
+.menu {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 18px;
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 32px;
+    border: 1.5px solid #853005;
+    border-radius: 50px;
+    color: #853005;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: "Century Gothic", sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #853005;
+    color: #EBDFCE;
+    transform: translateY(-4px);
+}
+
+.trabajos {
+    width: 100%;
+    min-height: 100vh;
+    padding: 130px 7vw 70px;
+    color: #853005;
+}
+
+
+/* =================================
+   TÍTULO PRINCIPAL
+================================= */
+
+.trabajos h1 {
+    margin-bottom: 60px;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: normal;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+
+/* =================================
+   GALERÍA
+================================= */
+
+.galeria {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px 30px;
+}
+
+/* Envoltorio individual para cada proyecto */
+.tarjeta-proyecto {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+/* =================================
+   PROYECTOS Y CAJAS
+================================= */
+
+.proyecto {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.imagen-proyecto {
+    width: 100%;
+    position: relative;
+    background-color: #d1bfa8;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+/* =================================
+   IMÁGENES Y FORMATOS INDIVIDUALES
+================================= */
+
+.proyecto-1 .imagen-proyecto {
+    height: 480px;
+    background-image: url('Imagen-encargo03.png');
+    background-size: cover;
+    background-position: top center;
+}
+
+.proyecto-2 .imagen-proyecto { height: 350px; }
+.proyecto-3 .imagen-proyecto { height: 350px; }
+.proyecto-4 .imagen-proyecto { height: 480px; }
+.proyecto-5 .imagen-proyecto { height: 400px; }
+.proyecto-6 .imagen-proyecto { height: 400px; }
+.proyecto-7 .imagen-proyecto { height: 330px; }
+.proyecto-8 .imagen-proyecto { height: 450px; }
+
+
+/* =================================
+   HOVER SOBRE LA IMAGEN
+================================= */
+
+.nombre-proyecto {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(133, 48, 5, 0.85);
+    color: #EBDFCE;
+    font-size: 25px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.proyecto:hover .nombre-proyecto {
+    opacity: 1;
+}
+
+.proyecto:hover .imagen-proyecto {
+    transform: scale(1.01);
+}
+
+
+/* =================================
+   TÍTULOS DEBAJO (ESTILO FOOTER)
+================================= */
+
+.titulo-debajo {
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    border-bottom: 1.5px solid #853005;
+    padding-bottom: 4px;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.titulo-debajo:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+
+/* =================================
+   RESPONSIVE Y FOOTER
+================================= */
+
+@media (max-width: 800px) {
+    .menu {
+        top: 20px;
+        gap: 7px;
+    }
+
+    .menu a {
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+    .trabajos {
+        padding: 120px 7vw 50px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .imagen-proyecto,
+    .proyecto-1 .imagen-proyecto,
+    .proyecto-2 .imagen-proyecto,
+    .proyecto-3 .imagen-proyecto,
+    .proyecto-4 .imagen-proyecto,
+    .proyecto-5 .imagen-proyecto,
+    .proyecto-6 .imagen-proyecto,
+    .proyecto-7 .imagen-proyecto,
+    .proyecto-8 .imagen-proyecto {
+        height: 350px;
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: 60px 7vw 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #853005;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}

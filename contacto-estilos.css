@@ -1,0 +1,204 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    background-color: #EBDFCE;
+    color: #853005;
+
+    font-family: "Century Gothic", sans-serif;
+}
+
+
+/* ==============================
+   BARRA DE NAVEGACIÓN
+============================== */
+
+.menu {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+
+    padding: 15px 32px;
+
+    border: 1.5px solid #853005;
+    border-radius: 50px;
+
+    color: #853005;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #853005;
+    color: #EBDFCE;
+
+    transform: translateY(-4px);
+}
+
+
+/* ==============================
+   CONTACTO
+============================== */
+
+.contacto {
+    min-height: calc(100vh - 100px);
+
+    padding: 150px 7vw 60px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* TÍTULO */
+
+.contacto h1 {
+    max-width: 800px;
+
+    font-size: clamp(4rem, 10vw, 10rem);
+
+    font-weight: normal;
+
+    line-height: 0.85;
+
+    text-transform: uppercase;
+
+    margin-bottom: 70px;
+}
+
+
+/* ==============================
+   DATOS DE CONTACTO
+============================== */
+
+.datos-contacto {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    max-width: 600px;
+}
+
+.datos-contacto a {
+    color: #853005;
+
+    font-size: 22px;
+
+    text-decoration: none;
+
+    width: fit-content;
+
+    border-bottom: 1px solid #853005;
+
+    padding-bottom: 5px;
+
+    transition: all 0.3s ease;
+}
+
+.datos-contacto a:hover {
+    opacity: 0.6;
+
+    transform: translateX(8px);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+    width: 100%;
+
+    padding: 40px 7vw;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.footer a {
+    color: #853005;
+
+    font-size: 16px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #853005;
+
+    padding-bottom: 4px;
+
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 700px) {
+
+    .menu {
+        top: 20px;
+
+        gap: 7px;
+    }
+
+    .menu a {
+        padding: 10px 13px;
+
+        font-size: 11px;
+    }
+
+    .contacto {
+        padding: 130px 8vw 50px;
+    }
+
+    .contacto h1 {
+        font-size: clamp(3.5rem, 15vw, 7rem);
+
+        margin-bottom: 50px;
+    }
+
+    .datos-contacto a {
+        font-size: 17px;
+
+        overflow-wrap: anywhere;
+    }
+
+}

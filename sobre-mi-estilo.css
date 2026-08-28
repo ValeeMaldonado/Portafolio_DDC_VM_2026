@@ -1,0 +1,238 @@
+/* =================================
+   PÁGINA SOBRE MÍ
+================================= */
+body {
+    font-family: "Century Gothic", 'Franklin Gothic Medium', 'Arial Narrow';
+}
+
+.menu {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+
+    padding: 15px 32px;
+
+    border: 1.5px solid #853005;
+    border-radius: 50px;
+
+    color: #853005;
+    text-decoration: none;
+
+    font-size: 16px;
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #853005;
+    color: #EBDFCE;
+
+    transform: translateY(-4px);
+}
+
+.sobre-mi {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 130px 7vw 60px;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 8vw;
+
+    color: #853005;
+}
+
+/* =================================
+   COLUMNA IZQUIERDA
+================================= */
+
+.columna-izquierda {
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+}
+
+
+/* FOTO */
+
+.fotografia {
+    width: 100%;
+    max-width: 420px;
+}
+
+.fotografia img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* CUALIDADES */
+
+.cualidades {
+    max-width: 420px;
+}
+
+.cualidades h2 {
+    margin-bottom: 18px;
+
+    font-size: 28px;
+    font-weight: normal;
+
+    text-transform: uppercase;
+}
+
+.cualidades p {
+    max-width: 350px;
+
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* =================================
+   COLUMNA DERECHA
+================================= */
+
+.columna-derecha {
+    padding-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 100px;
+}
+
+
+/* =================================
+   PRESENTACIÓN
+================================= */
+
+.presentacion {
+    max-width: 650px;
+}
+
+.presentacion h1 {
+    margin-bottom: 35px;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    line-height: 0.95;
+    font-weight: normal;
+
+    text-transform: uppercase;
+}
+
+.presentacion p {
+    max-width: 520px;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   FORMACIÓN
+================================= */
+
+.formacion {
+    max-width: 650px;
+}
+
+.formacion h2 {
+    margin-bottom: 25px;
+
+    font-size: 42px;
+    line-height: 0.95;
+    font-weight: normal;
+
+    text-transform: uppercase;
+}
+
+.formacion p {
+    max-width: 520px;
+
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 800px) {
+
+    .sobre-mi {
+        grid-template-columns: 1fr;
+
+        padding: 40px 8vw;
+
+        gap: 60px;
+    }
+
+    .columna-izquierda {
+        align-items: center;
+    }
+
+    .fotografia,
+    .cualidades {
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .columna-derecha {
+        padding-top: 0;
+
+        gap: 60px;
+    }
+
+    .presentacion h1,
+    .formacion h2 {
+        font-size: clamp(2.8rem, 10vw, 5rem);
+    }
+
+}
+
+.footer {
+    width: 100%;
+    padding: 60px 7vw 40px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 16px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #853005;
+
+    padding-bottom: 4px;
+
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}

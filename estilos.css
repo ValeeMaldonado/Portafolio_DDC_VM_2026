@@ -1,0 +1,200 @@
+/* ------------------------------
+   CONFIGURACIÓN GENERAL
+------------------------------ */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EBDFCE;
+    color: #853005;
+  font-family: "Century Gothic", 'Franklin Gothic Medium', 'Arial Narrow';
+}
+
+
+/* ------------------------------
+   PORTADA
+------------------------------ */
+
+.portada {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ------------------------------
+   MENu SUPERIOR
+------------------------------ */
+
+.menu {
+    position: absolute;
+
+    top: 35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 18px;
+
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+
+    padding: 15px 32px;
+
+    border: 1.5px solid #853005;
+    border-radius: 50px;
+
+    color: #853005;
+    text-decoration: none;
+
+    font-size: 16px;
+    text-transform: uppercase;
+
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #853005;
+    color: #EBDFCE;
+
+    transform: translateY(-4px);
+}
+
+/* ------------------------------
+   NOMBRE
+------------------------------ */
+
+.nombre {
+    position: absolute;
+
+    bottom: 30px;
+    right: 40px;
+
+    font-size: 20px;
+    line-height: 1.1;
+
+    z-index: 10;
+}
+
+
+/* ------------------------------
+   PORTAFOLIO
+------------------------------ */
+
+.titulo {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 55%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+}
+
+
+/* ------------------------------
+   RESPONSIVE
+------------------------------ */
+
+@media (max-width: 768px) {
+
+    .menu {
+        top: 20px;
+
+        gap: 6px;
+    }
+
+    .menu a {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .nombre {
+        top: 75px;
+        right: 20px;
+
+        font-size: 14px;
+    }
+
+    .titulo {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .menu {
+        width: 100%;
+
+        justify-content: center;
+
+        padding: 0 10px;
+    }
+
+    .menu a {
+        padding: 7px 9px;
+        font-size: 9px;
+    }
+
+    .nombre {
+        top: 75px;
+        right: 15px;
+
+        font-size: 12px;
+    }
+
+    .titulo {
+        width: 90%;
+    }
+}
+
+.footer {
+    width: 100%;
+    padding: 60px 7vw 40px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+    font-size: 16px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #853005;
+
+    padding-bottom: 4px;
+
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
