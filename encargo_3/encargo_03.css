@@ -1,0 +1,232 @@
+/* ==============================
+   CONFIGURACIÓN GENERAL
+============================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #EBDFCE;
+    color: #853005;
+    font-family: "Century Gothic", sans-serif;
+    padding-bottom: 60px;
+}
+
+/* ==============================
+   BARRA DE NAVEGACIÓN
+============================== */
+.menu {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 18px;
+    z-index: 10;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 32px;
+    border: 1.5px solid #853005;
+    border-radius: 50px;
+    color: #853005;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #853005;
+    color: #EBDFCE;
+    transform: translateY(-4px);
+}
+
+/* ==============================
+   ESTRUCTURA DEL CONTENIDO
+============================== */
+.container {
+    max-width: 900px;
+    margin: 140px auto 0 auto; /* Espacio para no chocar con la navegación absoluta */
+    padding: 0 20px;
+}
+
+/* Header interno del encargo */
+.portfolio-header {
+    border: 1.5px solid #853005;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: transparent;
+    margin-bottom: 40px;
+}
+
+.portfolio-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.portfolio-header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Títulos de sección */
+.section-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Cajas contenedoras del encargo */
+.content-box {
+    border: 1.5px solid #853005;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.25); /* Fondo sutil que contrasta con #EBDFCE */
+    padding: 35px;
+    margin-bottom: 50px;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+h3 {
+    font-size: 1.25rem;
+    border-bottom: 1.5px solid #853005;
+    padding-bottom: 6px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1rem;
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+code {
+    background-color: #853005;
+    color: #EBDFCE;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: monospace;
+    font-size: 0.85em;
+}
+
+.badge-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.badge-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.badge-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #853005;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+/* ==============================
+   ADAPTABILIDAD (RESPONSIVE)
+============================== */
+@media (max-width: 650px) {
+    .menu {
+        top: 20px;
+        gap: 8px;
+        width: 90%;
+        justify-content: center;
+    }
+
+    .menu a {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+
+    .container {
+        margin-top: 110px;
+        padding: 0 15px;
+    }
+
+    .content-box {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* ==============================
+   FOOTER Y RESPONSIVE
+============================== */
+.footer {
+    width: 100%;
+    padding: 40px 7vw;
+    display: flex;
+    justify-content: center;
+}
+
+.footer a {
+    color: #853005;
+    font-size: 16px;
+    text-decoration: none;
+    border-bottom: 1px solid #853005;
+    padding-bottom: 4px;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.6;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 850px) {
+    .menu {
+        top: 20px;
+        gap: 7px;
+    }
+
+    .menu a {
+        padding: 10px 13px;
+        font-size: 11px;
+    }
+
+    .dise-top-section,
+    .dise-cards-grid,
+    .dise-talleres-card {
+        grid-template-columns: 1fr;
+    }
+
+    .dise-bottom-section {
+        padding: 15px;
+    }
+
+    .dise-talleres-image {
+        max-height: 280px;
+    }
+}

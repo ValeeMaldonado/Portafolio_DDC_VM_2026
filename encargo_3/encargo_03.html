@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encargo 4 | Valentina Maldonado</title>
+    
+    <!-- Hoja de estilos del proyecto -->
+    <link rel="stylesheet" href="encargo_03.css">
+    
+    <!-- Íconos para la flechita de los botones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="menu">
+        <a href="01_sobre-mi.html">Sobre mí</a>
+        <a href="02_proyectos.html">Proyectos</a>
+        <a href="03_contacto.html">Contacto</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- HEADER DEL ENCARGO -->
+        <header class="portfolio-header">
+            <h1>Encargo 3: Análisis de Estructura y Diagramación Web</h1>
+        </header>
+
+        <!-- SECCIÓN 1: PLATAFORMA WEB -->
+        <section>
+            <h2 class="section-title">Plataforma Web: Spotify</h2>
+            
+            <div class="content-box">
+                <p class="intro-text">
+                    <strong>Spotify Web Player</strong> (<code>open.spotify.com</code>) se clasifica como una <strong>plataforma web</strong> debido a su alto nivel de interactividad, la gestión de estados en tiempo real y la reproducción continua de audio mientras el usuario navega.
+                </p>
+
+                <h3>Comportamiento del Layout y Scroll</h3>
+                <p>El layout está diseñado para maximizar la usabilidad durante el consumo multimedia, manteniendo las herramientas de control siempre accesibles.</p>
+                
+                <h4>Elementos Fijos:</h4>
+                <ul class="badge-list">
+                    <li><strong>Barra de navegación lateral izquierda:</strong> Se mantiene anclada verticalmente. Permite acceder a la biblioteca, playlists y secciones principales sin perder la referencia de ubicación.</li>
+                    <li><strong>Reproductor inferior:</strong> Utiliza posicionamiento fijo (<code>position: fixed</code>) en el margen inferior de la pantalla. Permite pausar, cambiar de canción o ajustar el volumen sin importar en qué parte de la página se encuentre el usuario.</li>
+                    <li><strong>Barra superior:</strong> Permanece en la cabecera. Al desplazarse hacia abajo, aumenta la opacidad de su fondo para mantener la legibilidad de la barra de búsqueda y el perfil de usuario.</li>
+                </ul>
+
+                <h4>Elementos Móviles (Scroll):</h4>
+                <ul class="badge-list">
+                    <li><strong>Panel de contenido central:</strong> Es la única sección que posee desplazamiento vertical libre (<code>overflow-y: auto</code>).</li>
+                    <li><strong>Carruseles de categorías:</strong> Dentro del panel central, las colecciones de discos y listas utilizan desplazamiento horizontal (<code>overflow-x: auto</code>) para explorar más elementos dentro de un mismo bloque temático.</li>
+                </ul>
+
+                <h3>Estructura de Columnas y Herramientas de Desarrollador (DevTools)</h3>
+                <p>Al inspeccionar el código mediante las herramientas de desarrollador del navegador (Chrome DevTools), se observa una maquetación basada en <strong>CSS Grid</strong> y <strong>Flexbox</strong>:</p>
+                
+                <h4>Grilla general:</h4>
+                <p>La vista completa está definida mediante un contenedor con <code>display: grid</code>, dividiendo la pantalla en áreas específicas: <em>sidebar</em> (columna izquierda), <em>main</em> (sección central) y <em>now-playing-bar</em> (fila inferior).</p>
+
+                <h4>Distribución de tarjetas en el panel central:</h4>
+                <p>El catálogo utiliza reglas adaptativas como <code>grid-template-columns: repeat(auto-fill, minmax(180px, 1fr))</code>, lo que permite que el número de columnas cambie automáticamente de 4 a 8 según el ancho del monitor.</p>
+
+                <h4>Jerarquía visual y lenguaje de formas:</h4>
+                <ul class="badge-list">
+                    <li><strong>Carátulas de álbumes y playlists:</strong> Formato cuadrado (relación de aspecto 1:1), alineado al estándar de la industria musical.</li>
+                    <li><strong>Fotografías de artistas:</strong> Formato circular (<code>border-radius: 50%</code>). Esta diferencia geométrica es una decisión explícita de experiencia de usuario (UX) para permitir la diferenciación cognitiva inmediata entre un creador y un contenedor de canciones.</li>
+                </ul>
+
+                <h3>Adaptabilidad a Pantalla Móvil (Diseño Responsive)</h3>
+                <p>Al activar la simulación de dispositivo móvil en DevTools, el layout sufre una transformación estructural para adaptarse a pantallas verticales de menor tamaño:</p>
+                <ul class="badge-list">
+                    <li><strong>Reestructuración de la navegación:</strong> La barra lateral izquierda desaparece como columna y sus funciones se trasladan a una Barra de Navegación Inferior (<em>Bottom Navigation Bar</em>) estática, optimizada para la interacción con los pulgares.</li>
+                    <li><strong>Colapso de columnas:</strong> El grid multi-columna del panel central se reduce progresivamente a 2 columnas o a un formato de lista en una sola fila vertical.</li>
+                    <li><strong>Simplificación del reproductor:</strong> El player inferior pierde los controles avanzados (volumen, barra de progreso expandida) y se convierte en una mini-barra colapsada con controles mínimos (Play/Pausa y título), la cual se puede desplegar a pantalla completa mediante interacción táctil.</li>
+                </ul>
+
+                <h3>Evaluación y Sugerencias de Ajuste</h3>
+                <p><strong>Decisiones apropiadas:</strong> La permanencia del reproductor en la parte inferior es fundamental en la arquitectura del sitio, asegurando que la función principal de la plataforma (escuchar música) no se interrumpa. La separación visual entre círculos (artistas) y cuadrados (álbumes) reduce la carga mental del usuario al navegar.</p>
+                <p><strong>Propuesta de mejora:</strong> <em>Optimización de la sobrecarga de carruseles.</em> En monitores de tamaño medio (computadores de 13" o 14"), el panel central acumula demasiados bloques con scroll horizontal, lo que obliga al usuario a realizar desplazamientos verticales excesivos.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: SITIO WEB -->
+        <section>
+            <h2 class="section-title">Sitio Web: Pitchfork</h2>
+            
+            <div class="content-box">
+                <p class="intro-text">
+                    <strong>Pitchfork</strong> (<code>pitchfork.com</code>) se clasifica como un <strong>sitio web</strong> (de carácter editorial, periodístico y de crítica musical) a diferencia de una plataforma interactiva como Spotify. Su objetivo principal es la publicación y lectura de artículos, noticias y reseñas de álbumes, priorizando la jerarquía visual del contenido por sobre la manipulación de datos en tiempo real.
+                </p>
+
+                <h3>Comportamiento del Layout y Scroll</h3>
+                <p>La estructura de Pitchfork está pensada para destacar artículos de portada y facilitar la lectura continua.</p>
+
+                <h4>Elementos Fijos:</h4>
+                <ul class="badge-list">
+                    <li><strong>Barra superior (Header de navegación):</strong> Permanece anclada en la parte superior. Al hacer scroll vertical hacia abajo, la barra se reduce de tamaño para no obstruir la lectura, manteniendo accesibles el menú principal, el buscador y el acceso a redes o suscripciones.</li>
+                    <li><strong>Caja de puntuación / Datos clave en artículos:</strong> En la vista de reseñas, el bloque con la nota numérica del álbum permanece pegado a un costado mientras el usuario lee los primeros párrafos del texto.</li>
+                </ul>
+
+                <h4>Elementos Móviles (Con Scroll):</h4>
+                <ul class="badge-list">
+                    <li><strong>Feed principal de noticias y reseñas:</strong> Toda la parrilla de contenidos se desplaza hacia abajo (<code>overflow-y: auto</code>).</li>
+                    <li><strong>Bloques destacados de portada:</strong> Las imágenes principales de cabecera y titulares se desplazan libremente con el cuerpo del sitio.</li>
+                </ul>
+
+                <h3>Estructura de Columnas y Herramientas de Desarrollador (DevTools)</h3>
+                <p>Al inspeccionar el código fuente mediante las herramientas de desarrollador (Chrome DevTools), se evidencia una diagramación editorial avanzada basada en <strong>CSS Grid</strong> y <strong>Flexbox</strong>:</p>
+
+                <h4>Grilla de Portada (Asimétrica):</h4>
+                <p>En la página de inicio, Pitchfork utiliza un CSS Grid asimétrico de 3 o 4 columnas. La noticia o reseña principal ocupa un área equivalente a 2 columnas (bloque destacado con imagen de mayor resolución), mientras que los artículos secundarios se organizan en las columnas restantes adyacentes.</p>
+
+                <h4>Estructura Interna de Reseñas:</h4>
+                <p>Al ingresar a un artículo, la maquetación se divide en 2 columnas: la columna izquierda o central guarda un ancho máximo para el cuerpo de texto (<code>max-width</code> para optimizar líneas de lectura), mientras la columna derecha alberga elementos de apoyo (carátula del álbum, puntaje en número grande y enlaces a servicios de streaming).</p>
+
+                <h4>Jerarquía Visual y Lenguaje de Formas:</h4>
+                <ul class="badge-list">
+                    <li><strong>Carátulas y Fotografía:</strong> Mantiene una proporción cuadrada (1:1) estricta para carátulas de discos y rectangular (16:9) para fotos de artistas.</li>
+                    <li><strong>Puntajes y Cajas Tipográficas:</strong> Los números de evaluación utilizan tipografías de gran tamaño dentro de cajas con bordes definidos, creando un impacto visual inmediato.</li>
+                </ul>
+
+                <h3>Adaptabilidad a Pantalla Móvil</h3>
+                <ul class="badge-list">
+                    <li><strong>Reestructuración del Menú:</strong> La barra superior simplifica sus opciones y oculta la navegación secundaria dentro de un Menú Hamburguesa (ícono de tres líneas).</li>
+                    <li><strong>Colapso del Grid a 1 Columna:</strong> La distribución asimétrica multi-columna se transforma en una sola columna vertical. Los contenidos se ordenan según su prioridad: primero la imagen principal, seguida del titular y el bajativo.</li>
+                    <li><strong>Reorganización de Fichas de Reseña:</strong> En la vista de artículo, el puntaje y la carátula del disco —que en escritorio se ubicaban en una columna lateral— se reordenan para aparecer en la parte superior del texto, asegurando que el usuario vea la calificación antes de iniciar la lectura.</li>
+                </ul>
+
+                <h3>Evaluación y Sugerencias de Ajuste</h3>
+                <p><strong>Decisiones apropiadas:</strong> La grilla asimétrica en la versión de escritorio le otorga una identidad estética de "revista impresa" moderna y dinámica. Además, la decisión de mantener fija la barra de navegación superior facilita la movilidad entre secciones sin obligar al usuario a volver al inicio (scroll top).</p>
+                <p><strong>Propuesta de mejora:</strong> Implementar pestañas de filtrado rápido (<em>"Reseñas"</em>, <em>"Noticias"</em>, <em>"Pistas"</em>) en la parte superior de la vista móvil o un botón para colapsar bloques antiguos, reduciendo la distancia de desplazamiento vertical y haciendo la exploración más directa.</p>
+            </div>
+        </section>
+
+    </div>
+    <!-- FOOTER IGUAL A TUS OTRAS PÁGINAS -->
+    <footer class="footer">
+        <a href="02_proyectos.html">← Volver a Mis Proyectos</a>
+    </footer>
+</body>
+</html>
